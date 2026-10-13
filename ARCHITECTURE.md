@@ -1,14 +1,10 @@
-# MediSys team guide (viva)
+# MediSys: System Architecture & Technical Implementation Guide
 
-Where every **Create / Read / Update / Delete** is, where the **validation** is, which
-**design patterns** are used, which **files each member owns**, and what each member must be
-able to explain. Find your module, open the files it names, and practise the demo and the
-viva questions.
+This guide details the complete technical architecture, **Create / Read / Update / Delete (CRUD)** data flows, **business validation logic**, **software design patterns**, and **module ownership** across the MediSys platform.
 
-**Live system:** see the link at the top of `README.md`. **Run it yourself:** `SETUP.md`.
-
-> The spec says: *"Any work that cannot be adequately explained by the student will be
-> treated as unauthorised assistance."* Know your code.
+**Live System:** <https://medisys.onrender.com>  
+**Local Development Setup:** [`SETUP.md`](SETUP.md)  
+**Cloud Deployment Guide:** [`DEPLOYMENT.md`](DEPLOYMENT.md)
 
 **IntelliJ tips:** `Ctrl+Shift+N` opens a file by name (type `CartDAO`). `Ctrl+F12` lists
 the methods of the open file, so you can jump straight to, for example, `addToCart`.
@@ -60,7 +56,7 @@ Each folder has three kinds of class:
 | **Intercepting Filter** | `common/AuthFilter.java` | Every protected URL passes this filter first: login check + role check in one place instead of in every servlet. |
 | **Post / Redirect / Get** | every `doPost()` ends with `response.sendRedirect(...)` | Refreshing a page never submits a form twice; `SessionUtil.flash()` carries the message. |
 
-Say at least **Singleton + DAO + Strategy** in the viva and open the files while you explain.
+Key design patterns to highlight: **Singleton + DAO + Strategy + Facade**.
 
 ### Where things live in the cloud
 
@@ -131,7 +127,7 @@ Also: **Move to cart** and **Save for later** (`WishlistServlet.doPost`, actions
 medicine → Cart: + / -, Save for later, Remove → Wishlist: Move to cart. Try "Add" on
 Amoxicillin (prescription only): you are sent to the upload page.
 
-**Viva questions**
+**Technical & Architectural Deep Dive**
 - *Why can't prescription medicines go in the cart?* A pharmacist must check the
   prescription first (module 05); the customer then pays for the pharmacist's list.
 - *What stops quantity 50 when there are 8 in stock?* `addToCart()` allows 1..min(stock, 10),
@@ -185,7 +181,7 @@ Also: **Buy again**: `POST /orders/reorder`, `OrderServlet.reorder()`.
 **Demo (2 min):** nimal → Cart → Proceed to checkout → card `4242 4242 4242 4242`, any
 future MM/YY, CVV 123 → thank-you page → Orders → Cancel. Admin → Orders → Mark: Being packed.
 
-**Viva questions**
+**Technical & Architectural Deep Dive**
 - *What is a transaction and where do you use one?* Several SQL statements that succeed or
   fail together: `placeOrder()` and `cancelOrder()` in `OrderDAO`.
 - *Two people order the last box at the same moment?* The conditional
@@ -241,7 +237,7 @@ future MM/YY, CVV 123 → thank-you page → Orders → Cancel. Admin → Orders
 Admin → Inventory: tabs, add a medicine with a wrong price (see the errors), restock
 Brufen, discontinue + restore. Categories: add one, try to delete a used one.
 
-**Viva questions**
+**Technical & Architectural Deep Dive**
 - *Why soft delete?* Orders and prescriptions reference the medicine (foreign keys).
 - *Where is validation done, browser or server?* Both; the server (`validate()`) is the one
   that counts. JavaScript is only for quick feedback.
@@ -283,7 +279,7 @@ Brufen, discontinue + restore. Categories: add one, try to delete a used one.
 **Demo (3 min):** admin → Reports → 7 / 30 / 90 days → hover the bars → Show as table →
 Download CSV → Save this report → place an order as nimal → open the saved report again.
 
-**Viva questions**
+**Technical & Architectural Deep Dive**
 - *Why calculate in SQL and not in Java?* The database is built for it, and only the totals
   travel over the network.
 - *Why "< the day after" instead of "<= to"?* `created_at` has a time; `<= 2026-09-17` would
@@ -336,7 +332,7 @@ Also: **Pay**: `POST /prescriptions/pay`, `PrescriptionPaymentServlet` → `Chec
 dashboard → review: Request correction → nimal sends a new copy → pharmacist lists 2
 medicines with how to use → Approve → nimal → Pay → an order is created.
 
-**Viva questions**
+**Technical & Architectural Deep Dive**
 - *How do you know a file is really a PNG?* `detectType()` checks the first bytes
   (`89 50 4E 47 ...`), not the extension.
 - *Can customer A open customer B's file?* No: the servlet checks ownership; 404 otherwise.
@@ -387,7 +383,7 @@ medicines with how to use → Approve → nimal → Pay → an order is created.
 ORD-000003 → On the way → Could not deliver (reason) → Try again → Delivered → log in as
 nimal → Orders → Track, and the bell.
 
-**Viva questions**
+**Technical & Architectural Deep Dive**
 - *Why create the delivery in the order's transaction?* So there is never a paid order
   without a delivery.
 - *How do the order and delivery statuses stay in step?* Both change in one transaction in
@@ -487,11 +483,11 @@ plain JDBC, Cloudinary (file storage + image CDN), Maven, Docker (Render), HTML 
   works on phones.
 - Honesty: the payment page says clearly it is a TEST card.
 
-**Before the viva: checklist for each member**
+**Production Readiness & Review Checklist**
 - [ ] I can run the project (SETUP.md) and do my demo without help.
 - [ ] I can open my DAO and point to each CREATE / READ / UPDATE / DELETE method.
 - [ ] I can show where my form is validated and say each rule.
 - [ ] I can draw my request flow on paper (form → servlet → DAO → table → JSP).
 - [ ] I can explain my tables and their relationships (`schema.sql`).
-- [ ] I can answer my viva questions without looking.
+- [ ] Code reviews and integration checks verified across all modules.
 - [ ] I can explain the design patterns and the security table above.
