@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    MediSys - Online Medicine Ordering System (SE2030 group project)
+    MediSys - Online Medicine Ordering System
 
     Maven build file. Open this folder in IntelliJ and it downloads everything
     listed below. "mvn package" builds target/medisys.war for Tomcat 11.

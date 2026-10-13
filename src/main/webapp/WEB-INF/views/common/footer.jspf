@@ -38,7 +38,7 @@
     </div>
     <% } %>
     <div class="footer-bottom">
-        <span>&copy; 2026 MediSys &middot; SE2030 Software Engineering group project</span>
+        <span>&copy; 2026 MediSys &middot; Online Medicine Ordering Platform</span>
         <span>Demo system: payments use test cards only.</span>
     </div>
 </footer>
