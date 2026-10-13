@@ -1,4 +1,4 @@
-# 💊 MediSys: Enterprise Online Medicine Ordering Platform
+# MediSys: Enterprise Online Medicine Ordering Platform
 
 [![Live Demo](https://img.shields.io/badge/demo-medisys--s4ie.onrender.com-success?style=for-the-badge&logo=render)](https://medisys-s4ie.onrender.com)
 [![Java 17+](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
@@ -13,10 +13,10 @@
 
 ---
 
-## 🌐 Live Deployment & Interactive Demo
+## Live Deployment & Interactive Demo
 
 The platform is live and fully accessible:
-👉 **[https://medisys-s4ie.onrender.com](https://medisys-s4ie.onrender.com)**
+**[https://medisys-s4ie.onrender.com](https://medisys-s4ie.onrender.com)**
 
 ### Role-Based Demo Credentials
 
@@ -33,37 +33,37 @@ You can test the end-to-end clinical and delivery workflow using pre-configured 
 
 ---
 
-## 📸 Application Showcase & Architecture Highlights
+## Application Showcase & Architecture Highlights
 
-### 🖥️ Customer & Clinical Workflow
+### Customer & Clinical Workflow
 
-| 🛒 Storefront & Medicine Catalog | 📋 Prescription Validation Gate |
+| Storefront & Medicine Catalog | Prescription Validation Gate |
 | :---: | :---: |
 | ![Storefront Home](docs/screenshots/01-storefront-home.png) | ![Prescription Required Medicine](docs/screenshots/02-medicine-details-prescription.png) |
 | *Patient-facing catalog featuring real-time stock availability, search filtering, and category navigation* | *Mandatory clinical prescription upload gate protecting regulated pharmaceutical items* |
 
-### 📊 Executive Analytics & Inventory Intelligence
+### Executive Analytics & Inventory Intelligence
 
-| 📈 Real-Time Financial & Inventory Analytics Dashboard |
+| Real-Time Financial & Inventory Analytics Dashboard |
 | :---: |
 | ![Analytics Dashboard](docs/screenshots/03-analytics-dashboard.png) |
 | *Executive KPI dashboard displaying total revenue, completed orders, pending deliveries, top-selling items, and low-stock warnings* |
 
-### ☁️ Cloud Infrastructure & Production Architecture
+### Cloud Infrastructure & Production Architecture
 
-| 🗄️ Supabase PostgreSQL Cloud Database | ☁️ Cloudinary Secure Media Vault |
+| Supabase PostgreSQL Cloud Database | Cloudinary Secure Media Vault |
 | :---: | :---: |
 | ![Supabase Schema](docs/screenshots/05-supabase-database-schema.jpg) | ![Cloudinary Media Library](docs/screenshots/04-cloudinary-media-storage.jpg) |
 | *Normalized relational database schema with ACID guarantees, foreign-key integrity, and SSL connection pooling* | *Cloud asset storage managing customer-uploaded prescriptions and product catalog media with signed URLs* |
 
-| 🚀 Automated Multi-Stage Docker CI/CD on Render |
+| Automated Multi-Stage Docker CI/CD on Render |
 | :---: |
 | ![Render Deployment Log](docs/screenshots/06-render-docker-deployment.jpg) |
 | *Continuous deployment pipeline executing multi-stage Docker builds on push to main with live health checks* |
 
 ---
 
-## 🏗️ System Architecture & Request Lifecycle
+## System Architecture & Request Lifecycle
 
 ```mermaid
 flowchart TD
@@ -87,7 +87,7 @@ flowchart TD
 
 ---
 
-## 📦 Core Functional Modules
+## Core Functional Modules
 
 The platform is architected into modular domain packages within `src/main/java/com/medisys/`:
 
@@ -103,7 +103,7 @@ The platform is architected into modular domain packages within `src/main/java/c
 
 ---
 
-## 🏛️ Software Design Patterns
+## Software Design Patterns
 
 The system implements classic GoF and enterprise patterns to maintain strict separation of concerns:
 
@@ -119,7 +119,7 @@ The system implements classic GoF and enterprise patterns to maintain strict sep
 
 ---
 
-## 🛠️ Technology Stack & Cloud Infrastructure
+## Technology Stack & Cloud Infrastructure
 
 - **Backend Runtime:** Java 17+, Jakarta Servlet API 6.1.0, Apache Tomcat 11.0.0
 - **Database:** PostgreSQL on [Supabase](https://supabase.com) (Session pooler with SSL encryption)
@@ -130,7 +130,7 @@ The system implements classic GoF and enterprise patterns to maintain strict sep
 
 ---
 
-## 🚀 Local Development Setup
+## Local Development Setup
 
 ### Prerequisites
 - **JDK 17** or newer
@@ -184,7 +184,7 @@ Open **`http://localhost:8080`** in your browser.
 
 ---
 
-## 👥 Contributors & Module Leads
+## Contributors & Module Leads
 
 | Contributor | Research & Development Role | Module Ownership |
 | :--- | :--- | :--- |
@@ -197,6 +197,6 @@ Open **`http://localhost:8080`** in your browser.
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE) — see the LICENSE file for details.
