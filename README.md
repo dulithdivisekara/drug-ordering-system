@@ -158,11 +158,11 @@ Open **`http://localhost:8080`** in your browser.
 
 | Contributor | Research & Development Role | Module Ownership |
 | :--- | :--- | :--- |
-| **Divisekara A. W. D. M. D. M. B.** | **System Architect & Lead** | Medicine Catalog & Dynamic Inventory |
+| **Divisekara A. W. D. M. D. M. B.** | Core Contributor | Medicine Catalog & Dynamic Inventory |
 | **Amadini G. G. A.** | Core Contributor | Shopping Cart & Concurrency-Safe Wishlist |
 | **Hewage B. H. A. S.** | Core Contributor | Order Placement & Transactional Checkout |
 | **Kaweesha P. M. G. S.** | Core Contributor | Executive Reporting & Analytics Dashboard |
-| **Perera D. A. A. N. S.** | Core Contributor | Prescription Triage & Verification Workflow |
+| **Perera D. A. A. N. S.** | **System Architect & Lead** | Prescription Triage & Verification Workflow |
 | **Deshabhi R. G. S.** | Core Contributor | Rider Dispatch & Delivery Tracking |
 
 ---
