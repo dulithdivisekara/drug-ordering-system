@@ -1,7 +1,7 @@
 # How the live system is hosted
 
 ```
- Browser ──> https://medisys.onrender.com ──> Render: Docker + Tomcat 11 + our WAR
+ Browser ──> https://medisys-s4ie.onrender.com ──> Render: Docker + Tomcat 11 + our WAR
                                                     │                    │
                                        JDBC (SSL)   ▼                    ▼  HTTPS API
                                       Supabase PostgreSQL         Cloudinary (files + image CDN)
@@ -51,7 +51,7 @@ files; product photos are public and are served from Cloudinary's CDN.
 
 3. Wait for the first build (about 5 minutes). The log ends with
    `[MediSys] Database connected` and `File storage: Cloudinary (...)`.
-   Note the address, e.g. `https://medisys.onrender.com`, and put it at the top of `README.md`.
+   Note the address, e.g. `https://medisys-s4ie.onrender.com`, and put it at the top of `README.md`.
 
 Every push to `main` redeploys automatically.
 

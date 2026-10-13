@@ -1,6 +1,6 @@
 # 💊 MediSys: Enterprise Online Medicine Ordering Platform
 
-[![Live Demo](https://img.shields.io/badge/demo-medisys.onrender.com-success?style=for-the-badge&logo=render)](https://medisys.onrender.com)
+[![Live Demo](https://img.shields.io/badge/demo-medisys--s4ie.onrender.com-success?style=for-the-badge&logo=render)](https://medisys-s4ie.onrender.com)
 [![Java 17+](https://img.shields.io/badge/Java-17%2B-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org/)
 [![Jakarta EE](https://img.shields.io/badge/Jakarta%20EE-Servlets%20%26%20JSP-FF5722?style=for-the-badge)](https://jakarta.ee/)
 [![Apache Tomcat 11](https://img.shields.io/badge/Tomcat-11.0-F8DC75?style=for-the-badge&logo=apache-tomcat&logoColor=black)](https://tomcat.apache.org/)
@@ -16,7 +16,7 @@
 ## 🌐 Live Deployment & Interactive Demo
 
 The platform is live and fully accessible:
-👉 **[https://medisys.onrender.com](https://medisys.onrender.com)**
+👉 **[https://medisys-s4ie.onrender.com](https://medisys-s4ie.onrender.com)**
 
 ### Role-Based Demo Credentials
 
@@ -30,6 +30,36 @@ You can test the end-to-end clinical and delivery workflow using pre-configured 
 | **Delivery Rider** | `delivery@medisys.lk` | `Delivery@123` | Assigned parcel dashboard, dispatch pickup, sequential delivery status progression, delivery attempt logging |
 
 > **Payment Simulation:** Use card number `4242 4242 4242 4242` with any future MM/YY and any 3-digit CVV for simulated transactions.
+
+---
+
+## 📸 Application Showcase & Architecture Highlights
+
+### 🖥️ Customer & Clinical Workflow
+
+| 🛒 Storefront & Medicine Catalog | 📋 Prescription Validation Gate |
+| :---: | :---: |
+| ![Storefront Home](docs/screenshots/01-storefront-home.png) | ![Prescription Required Medicine](docs/screenshots/02-medicine-details-prescription.png) |
+| *Patient-facing catalog featuring real-time stock availability, search filtering, and category navigation* | *Mandatory clinical prescription upload gate protecting regulated pharmaceutical items* |
+
+### 📊 Executive Analytics & Inventory Intelligence
+
+| 📈 Real-Time Financial & Inventory Analytics Dashboard |
+| :---: |
+| ![Analytics Dashboard](docs/screenshots/03-analytics-dashboard.png) |
+| *Executive KPI dashboard displaying total revenue, completed orders, pending deliveries, top-selling items, and low-stock warnings* |
+
+### ☁️ Cloud Infrastructure & Production Architecture
+
+| 🗄️ Supabase PostgreSQL Cloud Database | ☁️ Cloudinary Secure Media Vault |
+| :---: | :---: |
+| ![Supabase Schema](docs/screenshots/05-supabase-database-schema.jpg) | ![Cloudinary Media Library](docs/screenshots/04-cloudinary-media-storage.jpg) |
+| *Normalized relational database schema with ACID guarantees, foreign-key integrity, and SSL connection pooling* | *Cloud asset storage managing customer-uploaded prescriptions and product catalog media with signed URLs* |
+
+| 🚀 Automated Multi-Stage Docker CI/CD on Render |
+| :---: |
+| ![Render Deployment Log](docs/screenshots/06-render-docker-deployment.jpg) |
+| *Continuous deployment pipeline executing multi-stage Docker builds on push to main with live health checks* |
 
 ---
 
