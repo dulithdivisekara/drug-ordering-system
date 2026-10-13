@@ -6,23 +6,20 @@ and a database. Pick one database option below.
 ## 1. Get the code
 
 ```
-git clone https://github.com/IT25100562/drug-ordering-system.git
+git clone https://github.com/dulithdivisekara/drug-ordering-system.git
 ```
 
 Open the folder in IntelliJ and let it load the Maven project.
 
 ## 2. Database
 
-**Option A: use the team's Supabase database (easiest).** Ask the team lead for the
-database password, then create `src/main/resources/db.properties`:
+**Option A: Cloud PostgreSQL (e.g. Supabase).** Create your cloud project, run `database/schema.sql` and `database/sample-data.sql`, then create `src/main/resources/db.properties`:
 
+```properties
+db.url=jdbc:postgresql://<pooler-host>.pooler.supabase.com:5432/postgres?sslmode=require
+db.user=postgres.<project-ref>
+db.password=<your-database-password>
 ```
-db.url=jdbc:postgresql://aws-0-ap-south-1.pooler.supabase.com:5432/postgres?sslmode=require
-db.user=postgres.duzpvyrcxqyneatmpnfc
-db.password=<the password>
-```
-
-> Careful: this is the **live** database. Your test orders appear on the live site.
 
 **Option B: your own PostgreSQL.** Install PostgreSQL 16 (password for `postgres`:
 `postgres`), then in a terminal from the project folder:
@@ -68,8 +65,8 @@ docker run -p 8080:8080 -e DB_URL=... -e DB_USER=... -e DB_PASSWORD=... medisys
 
 ## 5. Try every module
 
-Log in with the demo accounts in `README.md` and follow the **Demo** line of your module in
-`VIVA-GUIDE.md`.
+Log in with the demo accounts in `README.md` and explore each module guided by
+`ARCHITECTURE.md`.
 
 ## Problems?
 

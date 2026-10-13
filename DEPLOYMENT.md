@@ -12,13 +12,15 @@ All three services have free plans.
 
 ## 1. Supabase (database)
 
-**Already done:** project `medisys` (ref `duzpvyrcxqyneatmpnfc`, Mumbai), with the tables and
-demo data loaded. Connection (Session pooler): host `aws-0-ap-south-1.pooler.supabase.com`,
-port `5432`, database `postgres`, user `postgres.duzpvyrcxqyneatmpnfc`. The team lead keeps
-the password.
-
-To rebuild it from nothing: <https://supabase.com> → New project → **SQL Editor** → run
+To provision the database: <https://supabase.com> → New project → **SQL Editor** → run
 `database/schema.sql`, then `database/sample-data.sql` → **Connect** → *Session pooler*.
+
+Connection format (Session pooler):
+- Host: `<pooler-host>.pooler.supabase.com`
+- Port: `5432`
+- Database: `postgres`
+- User: `postgres.<project-ref>`
+- Password: `<your-supabase-db-password>`
 
 `schema.sql` turns on Row Level Security for every table, so Supabase's public REST API
 can't read anything. Only our app (the table owner) can.
@@ -35,7 +37,7 @@ files; product photos are public and are served from Cloudinary's CDN.
 
 ## 3. Render (runs the Java app)
 
-1. Open <https://render.com/deploy?repo=https://github.com/IT25100562/drug-ordering-system>
+1. Open <https://render.com/deploy?repo=https://github.com/dulithdivisekara/drug-ordering-system>
    (or Render → **New → Blueprint** → pick this repo) and sign in with GitHub.
    Render reads `render.yaml` and creates the `medisys` web service (Docker, free plan).
 2. Fill in the secret settings it asks for:
